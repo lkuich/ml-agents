@@ -1194,6 +1194,7 @@ def process_layer(layer, context, args):
     if hasattr(klass, "rank"):
         rank = klass.rank
         if hasattr(rank, "__call__"):
+            input_ranks = np.array(input_ranks,dtype=float)
             assert (
                 -1 not in input_ranks
             )  # for rank() lambda all input ranks have to be known (not -1)
